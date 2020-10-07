@@ -31,6 +31,11 @@ declare module 'react-native-pell-rich-editor' {
         initialContentHTML?: string;
 
         /**
+         * Initial Height
+         */
+        initialHeight?: number;
+
+        /**
          * Boolean value to Initial content request focus. The default value is false.
          */
         initialFocus?: boolean;
@@ -53,7 +58,7 @@ declare module 'react-native-pell-rich-editor' {
         /**
          * Callback after height change
          */
-        onHeightChange: () => void;
+        onHeightChange: (height: number) => void;
 
         /**
          * Styling for container or for Rich Editor more dark or light settings

@@ -25,6 +25,7 @@ export default class RichTextEditor extends Component {
         disabled: false,
         useContainer: true,
         editorInitializedCallback: () => {},
+        initialHeight: 0,
     };
 
     constructor(props) {
@@ -40,11 +41,11 @@ export default class RichTextEditor extends Component {
         that.setRef = that.setRef.bind(that);
         that._keyOpen = false;
         that.selectionChangeListeners = [];
-        const {editorStyle: {backgroundColor, color, placeholderColor, cssText, contentCSSText} = {}, html} = props;
+        const {editorStyle: {backgroundColor, color, placeholderColor, cssText, contentCSSText} = {}, html, initialHeight} = props;
         that.state = {
             html: {html: html || createHTML({backgroundColor, color, placeholderColor, cssText, contentCSSText})},
             keyboardHeight: 0,
-            height: 0,
+            height: initialHeight,
             isInit: false,
         };
         that.focusListeners = [];
